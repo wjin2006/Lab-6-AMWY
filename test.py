@@ -1,2 +1,2 @@
 print("hello world from woojin")
-print("Hellp world")
+print("Hello world")
