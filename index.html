@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to HabitWise</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+
+    <!-- SCREEN 1: Signup -->
+    <div id="screen-signup">
+      <div class="nes-container with-title is-centered">
+        <p class="title">HabitWise</p>
+        <h2>Create Account</h2>
+
+        <label>Username</label>
+        <input class="nes-input" type="text" id="signup-username" placeholder="Enter Username">
+
+        <label>Email</label>
+        <input class="nes-input" type="text" id="signup-email" placeholder="Enter Email">
+
+        <label>Password</label>
+        <input class="nes-input" type="password" id="signup-password" placeholder="Enter Password">
+
+        <br><br>
+        <button class="nes-btn is-primary" onclick="handleSignUp()">Make The Oath</button>
+        <p>Already have an account? <a onclick="showScreen('screen-login')">Log in</a></p>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Login -->
+    <div id="screen-login" style="display:none;">
+      <div class="nes-container with-title is-centered">
+        <p class="title">HabitWise</p>
+        <h2>Welcome Back</h2>
+
+        <label>Username</label>
+        <input class="nes-input" type="text" id="login-username" placeholder="Enter Username">
+
+        <label>Password</label>
+        <input class="nes-input" type="password" id="login-password" placeholder="Enter Password">
+
+        <br><br>
+        <button class="nes-btn is-success" onclick="handleLogin()">Enter</button>
+        <p>No account yet? <a onclick="showScreen('screen-signup')">Sign up</a></p>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: Dialogue -->
+    <div id="screen-dialogue" style="display:none;">
+      <div id="dialogue-box" class="nes-container with-title is-centered" onclick="nextDialogue()">
+        <p class="title" id="dialogue-speaker"></p>
+        <p id="dialogue-text"></p>
+        <p style="text-align:right; font-size:0.6em;">▼</p>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: Dashboard (your habit tracker goes here later) -->
+    <div id="screen-dashboard" style="display:none;">
+      <div class="nes-container with-title is-centered">
+        <p class="title">Dashboard</p>
+        <p>*To be implemented*</p>
+      </div>
+    </div>
+
+  </body>
+</html>
