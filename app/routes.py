@@ -190,8 +190,11 @@ def complete_task(task_id):
                 progress.charisma_xp += xp_gain
             
             # Check for level up
-            if progress.xp >= progress.level * 100:
+            leveled_up = False
+            while progress.xp >= progress.level * 100:
                 progress.level += 1
+                leveled_up = True
+            if leveled_up:
                 flash(f"Level up! You are now level {progress.level}!", "success")
             
             db.session.commit()
